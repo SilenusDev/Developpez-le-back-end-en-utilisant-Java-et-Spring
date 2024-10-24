@@ -1,5 +1,5 @@
-package com.firstapi.controller;
+// package com.firstapi.controller;
 
-public class AuthController {
+// public class AuthController {
 
-}
+// }

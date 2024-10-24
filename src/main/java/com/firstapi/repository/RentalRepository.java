@@ -1,16 +1,17 @@
+// RentalRepository.java
 package com.firstapi.repository;
 
 import com.firstapi.models.Rental;
 import org.springframework.data.jpa.repository.JpaRepository;
-
+import org.springframework.stereotype.Repository;
 import java.util.List;
 
-public interface RentalRepository extends JpaRepository<Rental, Integer> {
-    List<Rental> findByOwnerId(Integer ownerId); // Trouver toutes les locations d'un propriétaire
 
-    List<Rental> findByNameContaining(String name); // Recherche de locations par nom
-
-    long countByOwnerId(Integer ownerId); // Compte des locations par propriétaire
+@Repository
+public interface RentalRepository extends JpaRepository<Rental, Long> {  // Changed Integer to Long for consistency
+    List<Rental> findByOwnerId(Long ownerId);
+    List<Rental> findByNameContaining(String name);
+    long countByOwnerId(Long ownerId);
 }
 
 
